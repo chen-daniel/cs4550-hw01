@@ -1,0 +1,21 @@
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+server {
+	listen 80;
+	listen [::]:80;
+
+	server_name hw01.dchen7321.site;
+
+	root /home/daniel/www/hw01.dchen7321.site;
+
+	index index.html;
+	
+	server_name hw01.dchen7321.site;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
